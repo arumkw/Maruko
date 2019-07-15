@@ -12,11 +12,13 @@
   margin-top: 20px;
 }
 
-.header h2 {
+.header-title{
+  margin-top: 30px;
   color: aliceblue;
-}
+  font-size: 25pt
+;}
 
-.Container , .Members{
+.Container , .Members, .Content{
   background-color: #2d132c;
   margin:30px;
   margin-top: 30px;
@@ -31,8 +33,10 @@ h1 {
   margin-left: 10px
 }
 
-.Container h3 {
+.Container-text {
   color: aliceblue;
+  font-size: 15pt;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Lists {
@@ -97,13 +101,13 @@ ul.headers li a {
   padding: 0px 20px 20px 20px;
   display: inline-block;
 }
-.content {
+/*.content {
   background-color: #FFF;
 }
 .content h2 {
   padding: 0;
   margin: 0;
-}
+}*/
 
 .navbar a {
   float: left;
@@ -148,4 +152,36 @@ img{
 
 .flex-container h2{
   color: #FFF;
+}
+
+.lists-card {
+  margin: 10px;
+  padding: 10px;
+  background-color:#2d132c;
+  min-height: 210px;
+  display: flex;
+}
+
+.list-card {
+  background: #ff9c91;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  display: block;
+}
+
+
+.header-button {
+  background-color: aquamarine;
+  width: 100px;
+  height: 50px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tengah {
+  text-align: center;
 }
