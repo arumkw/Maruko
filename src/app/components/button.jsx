@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../App.css';
 
-const ButtonCustom = ({color, value}) => {
+const ButtonCustom = ({onClick, color, value}) => {
     return (
-        <div style={{backgroundColor:color}} className='header-button'>
+        <div onClick={onClick} style={{backgroundColor:color}} className='header-button'>
             {value}
         </div>
     )

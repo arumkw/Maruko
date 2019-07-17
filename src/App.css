@@ -10,6 +10,7 @@
   margin-right:10px;
   height:300px;
   margin-top: 20px;
+  margin-bottom: 90px;
 }
 
 .header-title{
@@ -18,10 +19,32 @@
   font-size: 25pt
 ;}
 
-.Container , .Members, .Content{
+.Container{
   background-color: #2d132c;
   margin:30px;
   margin-top: 30px;
+}
+
+.Content{
+  margin:30px;
+  margin-top: 30px;
+}
+
+.Members {
+  background-color: #2d132c;
+  margin:30px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.detail-member {
+  margin: 0px;
+  color: aliceblue;
+}
+
+.detail-member-name {
+  margin: 0px;
+  display: flex;
 }
 
 .About {
@@ -37,6 +60,7 @@ h1 {
   color: aliceblue;
   font-size: 15pt;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
 }
 
 .Lists {
@@ -101,10 +125,11 @@ ul.headers li a {
   padding: 0px 20px 20px 20px;
   display: inline-block;
 }
-/*.content {
-  background-color: #FFF;
+.content {
+  display: flex;
 }
-.content h2 {
+
+/*.content h2 {
   padding: 0;
   margin: 0;
 }*/
@@ -123,8 +148,20 @@ ul.headers li a {
   color: black;
 }
 
-.navbar-right a{
-  float: right;
+.navbar-left{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.navbar-right{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 h1 a{
@@ -157,18 +194,19 @@ img{
 .lists-card {
   margin: 10px;
   padding: 10px;
-  background-color:#2d132c;
   min-height: 210px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .list-card {
-  background: #ff9c91;
-  width: 400px;
-  height: 200px;
-  text-align: center;
-  justify-content: center;
+  background: #2d132c;
+  color: aliceblue;
+  width: 300px;
+  height: auto;
   display: block;
+  margin: 1% 5% 0.5% 5%;
+  padding: 20px;
 }
 
 
@@ -184,4 +222,73 @@ img{
 
 .tengah {
   text-align: center;
+}
+
+.image-cropper {
+  max-width: 100px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  padding: 15px 20px 15px 20px;
+}
+
+.image-cropper img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.button-tambah {
+width: 100px;
+height: 40px;
+}
+
+.button-kurang {
+  width: 100px;
+  height: 40px;
+}
+
+.input-position {
+  display: flex;
+  color: aliceblue;
+}
+
+.pagination {
+  margin: 25px 80px 0px 80px;
+  justify-content: flex-end;
+  align-content: flex-end;
+  display: flex;
+}
+
+.pagination span {
+  cursor: pointer;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination .active {
+  background-color: #0099FF;
+  color:white;
+  border:1px solid #0099FF;
+}
+
+.loading {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+
+.loading-gif {
+  background-attachment: lightgrey;
+  width: 30%;
+  height: 30%;
 }
