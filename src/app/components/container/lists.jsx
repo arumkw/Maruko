@@ -2,10 +2,10 @@ import React from 'react'
 import ButtonCustom from '../button.jsx';
 
 const Lists = ({maping}) => {
-    if (maping.length == 0){
+    if (maping.length === 0){
         return (
             <div className='loading'>
-                <img className='loading-gif' src='https://media.giphy.com/media/PMzdWre1REXWo/giphy.gif' />
+                <img className='loading-gif' src='https://media.giphy.com/media/PMzdWre1REXWo/giphy.gif' alt=""/>
             </div>
         )
     }

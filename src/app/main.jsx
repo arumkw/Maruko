@@ -18,23 +18,40 @@ class Main extends React.Component {
     this.state = {
       propsan_bro: "",
       result:[],
-      next: "https://swapi.co/api/people/?page=1",
-      previous: "",
+      pageNow: 1,
       halaman: 1
     }
   }
 
   componentWillMount() {
-    this.fetching();
+    this.fetching(1);
     console.log('Aku will mount');
   }
 
-  componentDidMount() {
-    //fetch(this.fetching());
-    console.log('Aku did mount')
+  fetching(def=1){
+    let opt={
+      method:'GET',
+      //url:this.state.next
+      url:`https://swapi.co/api/people/?page=${def}`
+    }
+    axios(opt)
+    .then(({data}) => {
+      this.setState({
+        result: data.results,
+        pageNow: def
+      });
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
-  fetching(){
+  setThePage(newPage){
+    this.fetching(newPage)
+  }
+
+  /*
+    fetching(){
     let opt={
       method:'GET',
       //url:this.state.next
@@ -56,15 +73,16 @@ class Main extends React.Component {
   }
 
   setThePage(newPage){
-    console.log(`newnya : ${newPage}`)
-    console.log(typeof(newPage))
-    console.log(typeof(this.state.halaman))
+        console.log(`newnya : ${newPage}`)
+        console.log(typeof(newPage))
+        console.log(typeof(this.state.halaman))
     this.setState({halaman:newPage});
-    console.log(`pagenya1 : ${this.state.halaman}`)
+        console.log(`pagenya1 : ${this.state.halaman}`)
     this.fetching()
-    console.log('tesutoo oye')
-    console.log(`pagenya2 : ${this.state.halaman}`)
+        console.log('tesutoo oye')
+        console.log(`pagenya2 : ${this.state.halaman}`)
   }
+  */
 
   render (){
     return (
@@ -72,7 +90,6 @@ class Main extends React.Component {
           <NavBar />
           <Header
             props_input_main={(e) => {this.setState({propsan_bro:e})
-            console.log('tesutooooooo1');
           }}
           ></Header>
           <Container />
@@ -82,6 +99,7 @@ class Main extends React.Component {
             props_list={this.state.propsan_bro}
             result={this.state.result}
             props_page_main={(e) => this.setThePage(e)}
+            currentpage={this.state.pageNow}
           ></Contents>
           <Footer />
       </div>

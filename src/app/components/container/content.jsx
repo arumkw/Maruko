@@ -2,8 +2,9 @@ import React from 'react';
 import Lists from './lists.jsx';
 import SpanCustom from '../span.jsx';
 
-const Content = ({props_list,result,props_page_main}) => {
-    let json = [{
+const Content = ({props_list,result,props_page_main, currentpage}) => {
+    
+    /*let json = [{
         id: 1,
         tanggal: '27 November 2017',
         event: '#39 JakartaJS April Meetup with kumparan',
@@ -18,9 +19,15 @@ const Content = ({props_list,result,props_page_main}) => {
         tanggal: '27 September 2017',
         event: '#37 JakartaJS April Meetup with Hactiv8',
         participant: '110 went'
-    }]
+    }]*/
+    
     let resultZ = result;
     let json_filter = resultZ.filter(e => e.name.toLowerCase().includes(props_list));
+
+    let arrayNumber = [1,2,3,4,5,6,7,8,9];
+    
+    console.log("type of "+ typeof(currentpage))
+
     return (
         <div>
             <h1>Participant</h1>
@@ -30,19 +37,14 @@ const Content = ({props_list,result,props_page_main}) => {
                 />
             </div>
             <div className="pagination">
-                {/*<span onClick={() => this.props.props_page}>&laquo;</span>*/}
-                <SpanCustom 
-                    props_page={(e) =>  props_page_main(1)}
-                    value={'1'}
-                ></SpanCustom>
-                <SpanCustom
-                    props_page={(e) =>  props_page_main(2)}
-                    value={'2'}
-                ></SpanCustom>
-                <SpanCustom
-                    props_page={(e) =>  props_page_main(3)}
-                    value={'3'}
-                ></SpanCustom>
+                {arrayNumber.map((angka) =>
+                    <SpanCustom
+                        props_page={(e) =>  props_page_main(angka)}
+                        value={angka}
+                        classnm={angka === currentpage ? "active" : ""}
+                    ></SpanCustom>
+                    
+                )}
             </div>
         </div>
 

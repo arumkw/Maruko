@@ -58,7 +58,7 @@ class Header extends React.Component {
         return (
             <div class="flex-container">
                 <div className="header">
-                    <img src={this.state.url} />
+                    <img src={this.state.url} alt=""/>
                 </div>
                 <div>
                 <div onClick={() => this.ganti_warna()} className='header-title'>Hacktiv8 Meetup</div>
